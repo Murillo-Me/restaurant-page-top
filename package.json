@@ -1,0 +1,17 @@
+{
+  "name": "restaurant-page",
+  "version": "1.0.0",
+  "description": "TheOdinProject curriculum's first take on a webpack project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Murillo Mendes",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.27.5",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "webpack": "^5.57.1",
+    "webpack-cli": "^4.8.0"
+  }
+}
