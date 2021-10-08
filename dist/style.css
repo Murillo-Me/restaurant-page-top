@@ -25,7 +25,7 @@ img {
 /* PAGE CSS */
 
 body {
-  --header-height: 60px;
+  --header-height: 80px;
   --footer-height: 80px;
   background-image: url(../assets/images/restaurant2.jpg);
   background-attachment: fixed;
@@ -39,14 +39,28 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: purple;
+    background-color: #5C3D2E;
 }
 
 .logo {
-    width: 100px;
-    height: 50px;
-    background-color: white;
+  position: relative;
+    width: 130px;
+    height: 65px;
+    overflow: hidden;
+    background-color: #E0C097;
     margin-left: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 15px black;
+}
+
+.logo img {
+  height: calc(var(--header-height) - 20px);
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .navbar {
@@ -65,7 +79,7 @@ header {
   height: 100%;
   padding-inline: 20px;
   border-left: 1px solid white;
-  background-color: purple;
+  background-color: #5C3D2E;
 }
 
 .nav-item:hover {
@@ -81,14 +95,8 @@ header {
 }
 
 .nav-focus {
-  background-color: pink;
+  background-color: #B85C38;
 }
-
-.nav-focus a {
-  color: darkmagenta;
-  border-bottom: 1px solid darkmagenta;
-}
-
 
 main {
   width: 100%;
@@ -102,15 +110,36 @@ main {
   width: 100%;
   min-height: calc(100vh - var(--header-height));
   height: 110vh; 
-  background-image: linear-gradient(black, darkgrey);
+  background-color: black;
 }
 
 .hero-text-container {
   display: flex;
+  z-index:100;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 60%;
+  background-color: black;
+  box-shadow: 300px 0px 200px 100px black;
+  text-shadow: 0.5px 0px 35px darkgrey;
+}
+
+.hero-title {
+  margin-bottom: 40px;
+  font-size: 3.5rem;
+  color: #B85C38;
+}
+
+.hero-text {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-inline: 200px;
+  color: #E0C097;
+}
+
+.highlight-text {
+  color:#B85C38;
 }
 
 .hero-img-container {
@@ -122,18 +151,30 @@ main {
   height: 100%;
 }
 
-
-
 .fixed-background {
   height: 80vh;
 }
 
 .more-info-section {
-  background-color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(#5C3D2E 20%, #B85C38);
   height: calc(100vh - var(--footer-height));
+}
+
+.more-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #E0C097;
+  width: 90%;
+  height:90%;
+  border-radius: 40px;
 }
 
 footer {
   height: var(--footer-height);
-  background-color: black;
+  background-color: #B85C38;
 }
