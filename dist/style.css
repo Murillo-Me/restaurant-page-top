@@ -27,7 +27,7 @@ img {
 body {
   --header-height: 80px;
   --footer-height: 135px;
-  background-image: url(../assets/images/restaurant2.jpg);
+  background-image: url(./assets/images/restaurant2.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 100% auto;
@@ -251,6 +251,8 @@ footer {
 }
 
 .footer-link {
+  color: white;
+  text-decoration: none;
   font-size: 1.1rem;
   cursor: pointer;
 }
