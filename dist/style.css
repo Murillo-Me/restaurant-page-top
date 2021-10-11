@@ -26,7 +26,7 @@ img {
 
 body {
   --header-height: 80px;
-  --footer-height: 80px;
+  --footer-height: 135px;
   background-image: url(../assets/images/restaurant2.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -77,7 +77,6 @@ header {
   display: flex;
   align-items: center;
   height: 100%;
-  padding-inline: 20px;
   border-left: 1px solid white;
   background-color: #5C3D2E;
 }
@@ -87,11 +86,16 @@ header {
 }
 
 .nav-links {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
   text-decoration: none;
   color: white;
   font-weight: bold;
   font-size: 1.2rem;
-  border-bottom: 1px solid white;
+  line-height: 5rem;
+  text-decoration-line: underline;
+  padding-inline: 20px;
 }
 
 .nav-focus {
@@ -108,8 +112,7 @@ main {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  min-height: calc(100vh - var(--header-height));
-  height: 110vh; 
+  height: calc(100vh - var(--header-height));
   background-color: black;
 }
 
@@ -144,7 +147,7 @@ main {
 
 .hero-img-container {
   margin-right: 0px;
-  min-height: 110vh;
+  height: calc(100vh - var(--header-height));
 }
 
 .hero-img-container img {
@@ -161,6 +164,7 @@ main {
   align-items: center;
   background-image: linear-gradient(#5C3D2E 20%, #B85C38);
   height: calc(100vh - var(--footer-height));
+  box-shadow: 0px -100px 180px black;
 }
 
 .more-info-container {
@@ -172,21 +176,115 @@ main {
   width: 90%;
   height:90%;
   border-radius: 40px;
+  box-shadow: -10px 0px 15px black;
 }
 
 .more-info-subcontainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: fit-content;
+  height: 30%;
+  margin-left: auto;
+  margin-right: 350px;
+  text-align: left;
+}
+
+.more-info-subcontainer:first-of-type, .more-info-subcontainer:last-of-type {
+  margin-right: auto;
+  margin-left: 50px;
+}
+
+.more-info-title {
+  margin-block: 20px;
+  font-weight: bold;
+}
+
+.more-info-text {
+  width: 400px;
+  font-size: 1.2rem;
 }
 
 .more-info-subcontainer img {
-  width: 10px;
-  height: 10px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 15px black;
+  height: 100%;
+  margin-right: 50px;
 }
 
 footer {
+  color: white;
   height: var(--footer-height);
-  background-color: #B85C38;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-upper-information {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center; 
+}
+
+.footer-upper-information > div {
+  margin-inline: 100px;
+  margin-bottom: 20px;
+}
+
+.footer-opening-hours {
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-title {
+  width: 100%;
+  margin-block: 10px;
+}
+
+.days {
+  margin-right: 30px;
+}
+
+.footer-link {
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.footer-link:hover {
+  color: #B85C38;
+}
+
+.footer-social-media i {
+  font-size: 1.6rem;
+  margin-right: 8px;
+}
+
+.footer-social-media a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.fa-facebook-square:hover {
+  color: #4267B2;
+  cursor: pointer;
+}
+
+.fa-instagram-square:hover {
+  color: #C13584;
+  cursor: pointer;
+}
+
+.fa-twitter-square:hover {
+  color: #1DA1F2;
+  cursor: pointer;
+}
+
+.fa-whatsapp-square:hover {
+  color: #25D366;
+  cursor: pointer;
 }
