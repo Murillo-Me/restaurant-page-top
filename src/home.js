@@ -7,6 +7,10 @@ import ambientImage from './assets/images/ambient.jpg'
 export default function home() {
     console.log('test home');
 
+    const body = document.querySelector('body');
+    body.className = ''
+    body.classList.add('home-bg');
+
     const contentDiv = document.querySelector('.content')
     contentDiv.innerHTML = `
     <header>
@@ -15,7 +19,7 @@ export default function home() {
        </div>
        <nav class="navbar">
            <ul class="nav-list">
-               <li class="nav-item nav-focus"><a href="#" data-tab="home" class="nav-links">Home</a></li>
+               <li class="nav-item"><a href="#" data-tab="home" class="nav-links">Home</a></li>
                <li class="nav-item"><a href="#" data-tab="menu" class="nav-links">Menu</a></li>
                <li class="nav-item"><a href="#" data-tab="contact" class="nav-links">Contact</a></li>
            </ul>
@@ -97,4 +101,9 @@ export default function home() {
 </div>
    </footer>
     `
+    const tabs = document.querySelectorAll("[data-tab]")
+    tabs.forEach(tab => tab.className = 'nav-links')
+
+    const focusTab = document.querySelector("[data-tab='home']")
+    focusTab.classList.add('nav-focus')
 }

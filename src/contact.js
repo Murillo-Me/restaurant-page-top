@@ -3,6 +3,10 @@ import Logo from './assets/images/logo-clear.png'
 export default function contact() {
     console.log('test contact');
 
+    const body = document.querySelector('body');
+    body.className = ''
+    body.classList.add('contact-bg');
+
     const contentDiv = document.querySelector('.content')
     contentDiv.innerHTML = `
     <header>
@@ -11,7 +15,7 @@ export default function contact() {
        </div>
        <nav class="navbar">
            <ul class="nav-list">
-                <li class="nav-item nav-focus"><a href="#" data-tab="home" class="nav-links">Home</a></li>
+                <li class="nav-item"><a href="#" data-tab="home" class="nav-links">Home</a></li>
                 <li class="nav-item"><a href="#" data-tab="menu" class="nav-links">Menu</a></li>
                 <li class="nav-item"><a href="#" data-tab="contact" class="nav-links">Contact</a></li>
            </ul>
@@ -65,4 +69,10 @@ export default function contact() {
 </div>
    </footer>
     `
+
+    const tabs = document.querySelectorAll("[data-tab]")
+    tabs.forEach(tab => tab.className = 'nav-links')
+
+    const focusTab = document.querySelector("[data-tab='contact']")
+    focusTab.classList.add('nav-focus')
 }
