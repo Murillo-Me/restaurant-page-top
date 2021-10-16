@@ -12,7 +12,6 @@ const Handler= {
 console.log('test index');
 
 home();
-// menu();
 
 function loadPage() {
     const contentDiv = document.querySelector('.content')
@@ -23,7 +22,5 @@ function loadPage() {
 }
 
 const tabBtns = document.querySelectorAll('.nav-links')
-// const menuBtn = document.querySelector('.menu--btn')
-// const contactBtn = document.querySelector('.contact--btn')
 
 tabBtns.forEach(btn => btn.addEventListener('click', loadPage))

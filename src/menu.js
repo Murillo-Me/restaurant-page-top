@@ -1,4 +1,43 @@
 import Logo from './assets/images/logo-clear.png'
+import ChickenDishImage from './assets/images/menu/chicken-dish.jpg'
+import PastaDishImage from './assets/images/menu/pasta-dish.jpg'
+import RibsDishImage from './assets/images/menu/ribs-dish.jpg'
+import ShrimpDishImage from './assets/images/menu/shrimp-dish.jpg'
+import VegetableSandwichImage from './assets/images/menu/vegetable-sandwich.jpg'
+
+class MenuItem {
+    constructor(name, image, price = 0) {
+        this.name = name;
+        this.image = image;
+        this.price = new Intl.NumberFormat('en-US', {
+                        style: 'currency',
+                        currency: 'USD'
+                    }).format(price);
+    }
+
+    appendToMenu() {
+        let itemCard = document.createElement("div")
+        itemCard.classList.add('menu-card')
+    
+        const cardContainer = document.querySelector('.card-container')
+    
+        cardContainer.appendChild(itemCard);
+    
+        itemCard.innerHTML =`
+                                <div class="card-img-container"><img src="${this.image}" alt="${this.name}" class="card-image"></div>
+                                <h1 class="card-title"> ${this.name} </h1>
+                                <span class="card-price"> ${this.price} </span>
+                            `
+    }
+}
+
+const items = [];
+
+items.push(new MenuItem('Grilled Asian Chicken',ChickenDishImage))
+items.push(new MenuItem('Pasta',PastaDishImage))
+items.push(new MenuItem('Ribs',RibsDishImage))
+items.push(new MenuItem('Shrimp Soup',ShrimpDishImage))
+items.push(new MenuItem('Vegetable Sandwich',VegetableSandwichImage))
 
 export default function menu() {
     console.log('test menu');
@@ -8,6 +47,7 @@ export default function menu() {
     body.classList.add('menu-bg');
 
     const contentDiv = document.querySelector('.content')
+
     contentDiv.innerHTML = `
     <header>
        <div class="logo">
@@ -24,7 +64,9 @@ export default function menu() {
 
    <main>
        <section class="menu-section">
-       
+            <div class="card-container">
+
+            </div>
       </section>
    </main>
 
@@ -74,4 +116,6 @@ export default function menu() {
 
     const focusTab = document.querySelector("[data-tab='menu']")
     focusTab.classList.add('nav-focus')
+
+    items.forEach(item => item.appendToMenu())
 }
