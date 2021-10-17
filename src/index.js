@@ -11,7 +11,7 @@ const Handler= {
 
 console.log('test index');
 
-contact();
+home();
 
 function loadPage() {
     const contentDiv = document.querySelector('.content')
