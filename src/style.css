@@ -24,14 +24,9 @@ img {
 
 /* HOME TAB CSS */
 
-html {
-  scrollbar-color: #6969dd #e0e0e0;
-  scrollbar-width: thin;
-}
-
 body {
   --header-height: 80px;
-  --footer-height: 135px;
+  --footer-height: 150px;
 }
 
 
@@ -51,6 +46,7 @@ header {
     background-color: #5C3D2E;
     position: relative;
     z-index: 100;
+    border-bottom: 0.5px solid black;
 }
 
 .logo {
@@ -247,7 +243,7 @@ footer {
 
 .footer-upper-information > div {
   margin-inline: 100px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .footer-opening-hours {
@@ -322,6 +318,7 @@ footer {
 
 .menu-section {
   height: calc(100vh - var(--footer-height) - var(--header-height));
+  min-height: fit-content;
 }
 
 .card-container {
@@ -377,4 +374,74 @@ footer {
 .card-price {
   margin-top: 10px;
   font-size: 1.5rem;
+}
+
+/* CONTACT PAGE */
+
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - var(--footer-height) - var(--header-height));
+}
+
+.contact-bg {
+  background-color: #5C3D2E;
+  background: repeating-linear-gradient( -45deg, #E0C097, #E0C097 20px, #5C3D2E 20px, #5C3D2E 100px );
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  background-color: #E0C097;
+  padding: 50px 30px;
+  border-radius: 40px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-inline: 20px;
+  width: 350px;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.form-container form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-container form input, .form-container form textarea {
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+input[type='submit'] {
+  background-color: #5C3D2E;
+  color: white;
+  font-weight: bolder;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.location-container {
+  margin-inline: 20px;
+}
+
+.location-container h1 {
+  font-weight: bolder;
+  margin-bottom: 10px;
 }
